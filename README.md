@@ -1,2 +1,25 @@
 # Spotify ETL Data Pipeline End-to-end Project
+
+### Introduction:
 This is an ETL(Extract, Transform, Load) Data Pipeline project using Spotify API. In this we extracted the data from the spotify API and stored it on AWS S3 bucket, then transformed the data to desired format, and then finally load it on target S3 folder.
+
+### About Spotify API:
+Spotify API contains the data of albums, artists and songs. This data can be extracted using API which will be invoked with the client-id and client secret present in [Spotify Developer Dashboard](https://developer.spotify.com/dashboard)
+
+### Architecture Flow:
+
+
+### AWS Services Used:
+1. **AWS S3 :** Amazon Simple Storage Service (Amazon S3) is an object storage service that offers industry-leading scalability, data availability, security, and performance. You can use Amazon S3 to store and retrieve any amount of data at any time, from anywhere.
+
+2. **AWS Lambda :** AWS Lambda is a serverless, event-driven compute service that lets you run code for virtually any type of application or backend service without provisioning or managing servers. You can trigger Lambda from over 200 AWS services and software as a service (SaaS) applications, and only pay for what you use.
+
+3. **AWS CloudWatch :** CloudWatch enables you to monitor your complete stack (applications, infrastructure, network, and services) and use alarms, logs, and events data to take automated actions and reduce mean time to resolution (MTTR). This frees up important resources and allows you to focus on building applications and business value.
+
+4. **AWS Crawler :** A crawler can crawl multiple data stores in a single run. Upon completion, the crawler creates or updates one or more tables in your Data Catalog. Extract, transform, and load (ETL) jobs that you define in AWS Glue use these Data Catalog tables as sources and targets.
+
+5. **AWS Glue Catalog :** The AWS Glue Data Catalog is organized into databases and tables to provide a logical structure for storing and managing metadata. This structure supports precise data access control at a table or database level by using AWS Identity and Access Management (IAM) policies.
+
+6. **AWS Athena :** Amazon Athena is a serverless, interactive analytics service built on open-source frameworks, supporting open-table and file formats. Athena provides a simplified, flexible way to analyze petabytes of data where it lives.
+
+
