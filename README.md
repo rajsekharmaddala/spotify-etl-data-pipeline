@@ -7,7 +7,7 @@ This is an ETL(Extract, Transform, Load) Data Pipeline project using Spotify API
 Spotify API contains the data of albums, artists and songs. This data can be extracted using API which will be invoked with the client-id and client secret present in [Spotify Developer Dashboard](https://developer.spotify.com/dashboard)
 
 ### Architecture Flow:
-
+**Spotify API** -> **AWS Cloudwatch** trigger and invoke extract function in specified intervals -> Exracts raw data to **AWS S3** bucket raw folder (through **AWS Lambda** extract function) -> **AWS S3** trigger and invoke transformation function when new file created in raw folder -> Loads transformed data into **AWS S3** bucket transformed folder (through **AWS Lambda** transform function) -> Crawl the data and edit the datatypes accordingly using **AWS Crawler** and **AWS Glue Catalog** -> Query the data using **AWS Athena**
 
 ### AWS Services Used:
 1. **AWS S3 :** Amazon Simple Storage Service (Amazon S3) is an object storage service that offers industry-leading scalability, data availability, security, and performance. You can use Amazon S3 to store and retrieve any amount of data at any time, from anywhere.
@@ -21,5 +21,15 @@ Spotify API contains the data of albums, artists and songs. This data can be ext
 5. **AWS Glue Catalog :** The AWS Glue Data Catalog is organized into databases and tables to provide a logical structure for storing and managing metadata. This structure supports precise data access control at a table or database level by using AWS Identity and Access Management (IAM) policies.
 
 6. **AWS Athena :** Amazon Athena is a serverless, interactive analytics service built on open-source frameworks, supporting open-table and file formats. Athena provides a simplified, flexible way to analyze petabytes of data where it lives.
+
+### Imported packages:
+```
+import json
+import boto3
+import requests
+from datetime import datetime
+from io import StringIO
+import pandas
+```
 
 
