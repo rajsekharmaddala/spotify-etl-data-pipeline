@@ -25,8 +25,10 @@ Spotify API contains the data of albums, artists and songs. This data can be ext
 ### Imported packages:
 ```
 import json
+import os
 import boto3
-import requests
+import spotipy
+from spotipy.oauth2 import SpotifyClientCredentials
 from datetime import datetime
 from io import StringIO
 import pandas
